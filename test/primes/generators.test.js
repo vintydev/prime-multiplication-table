@@ -22,7 +22,9 @@ for (const [name, generatePrimes] of Object.entries(primeGenerators))
         });
 
         it("returns exactly the number of primes asked for", () => {
-            assert.equal(generatePrimes(count).length, count);
+            for (const count of [1, 2, 10, 100, 1000, 10000]) {
+                assert.equal(generatePrimes(count).length, count);
+            }
         });
 
         it("returns the correct 1,000th prime (7,919)", () => {
