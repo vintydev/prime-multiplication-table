@@ -3,10 +3,6 @@
     "version": "1.0.0",
     "description": "Prints a multiplication table of the first N prime numbers",
     "type": "module",
-    "main": "src/primeTable.js",
-    "bin": {
-        "prime-table": "src/index.js"
-    },
     "scripts": {
         "start": "node src/index.js",
         "test": "node --test",
