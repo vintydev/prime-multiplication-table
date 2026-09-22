@@ -45,3 +45,14 @@ for (const [name, generatePrimes] of Object.entries(primeGenerators))
         })
     });
 }
+
+// two different algorithms for generating primes should give the same results, so we can test that here
+describe("Prime generators agree with each other", () => {
+    it("give the same results for the first 2,000 primes", () => {
+
+        const sieveResult = primeGenerators["sieve-of-eratosthenes"](2000);
+        const trialDivisionResult = primeGenerators["trial-division"](2000);
+        
+        assert.deepEqual(sieveResult, trialDivisionResult);
+    })
+})
