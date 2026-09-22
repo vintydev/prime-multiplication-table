@@ -1,5 +1,5 @@
 import { describe, it } from "node:test";
-import assert from "node:assert";
+import assert from "node:assert/strict";
 import { primeGenerators } from "../../src/primes/index.js";
 
 // Define first ten prime numbers as a constant for testing
