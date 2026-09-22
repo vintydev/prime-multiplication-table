@@ -21,10 +21,20 @@ describe("parseN", () =>
     {
         for(const invalidInput of ["0", "-5", String(MAX_N + 1)])
         {
-            assert.throws(() => parseN(invalidInput, {
+            assert.throws(() => parseN(invalidInput), {
                 message: `N must be a whole number between 1 and ${MAX_N}`
-            }))
+            })
 
+        }
+    });
+
+    it("rejects input that is missing, not a number, or not a whole number", () =>
+    {
+        for(const invalidInput of [undefined, "abc", "3.14", "NaN", "Infinity"])
+        {
+            assert.throws(() => parseN(invalidInput), {
+                message: `N must be a whole number between 1 and ${MAX_N}`
+            })
         }
     });
 
