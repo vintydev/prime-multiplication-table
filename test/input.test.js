@@ -6,18 +6,18 @@ describe("parseN", () =>
 {
     it("accepts whole numbers from 1 up to the maximum allowed", () =>
     {
-        assert.equal(parseN("1", 1));
-        assert.equal(parseN("10", 10));
-        assert.equal(parseN(String(MAX_N), MAX_N));
+        assert.equal(parseN("1"), 1);
+        assert.equal(parseN("10"), 10);
+        assert.equal(parseN(String(MAX_N)), MAX_N);
         
     });
 
     it("ignores spaces around the number", () => 
     {
-        assert.equal(parseN(" 1  ", 1));
+        assert.equal(parseN("  1  "), 1);
     });
 
-    it("rejects numbers that are too small or too lareg", () =>
+    it("rejects numbers that are too small or too large", () =>
     {
         for(const invalidInput of ["0", "-5", String(MAX_N + 1)])
         {
@@ -27,5 +27,5 @@ describe("parseN", () =>
 
         }
     });
-    
-})
+
+});
