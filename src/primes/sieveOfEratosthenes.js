@@ -52,9 +52,9 @@ function findPrimesUpTo(limit)
 
             primes.push(number);
 
-            // Cross out all multiples of the prime number so they are not considered prime in future iterations
-            // (i.e., multiples of primes cannot be prime since they are divisible by that prime)
-            for (let multiple = number * 2; multiple <= limit; multiple += number) {
+            // Cross out its multiples. We can start at number * number, because smaller
+            // multiples will have already been crossed out by smaller primes (e.g., 2, 3, 5, etc.)
+            for (let multiple = number * number; multiple <= limit; multiple += number) {
                 isCrossedOut[multiple] = true;
             }
         }
