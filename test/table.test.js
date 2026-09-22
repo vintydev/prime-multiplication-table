@@ -1,5 +1,5 @@
 import { describe, it } from "node:test";
-import assert from "ndde:assert/strict";
+import assert from "node:assert/strict";
 import { buildTable, formatTable } from "../src/table.js";
 
 describe("buildTable", () =>
@@ -18,12 +18,10 @@ describe("buildTable", () =>
 
     it("builds a 2x2 table for a singular prime", () => 
     {
-        assert.deepEqual(buildTable([2],
-            [
-                ["", 2],
-                [2, 4]
-            ]
-        ))
+        assert.deepEqual(buildTable([2]), [
+            ["", 2],
+            [2, 4]
+        ]);
     });
 });
 
