@@ -41,7 +41,7 @@ export function sieveOfEratosthenes(count)
 function findPrimesUpTo(limit)
 {
     // One true/false flag per number, all started as not crossed out (true)
-    const isCrossedOut = new Array(limit + 1).fill(false);
+    const isCrossedOut = new Uint8Array(limit + 1).fill(false);
     const primes = [];
 
     // Loop through all numbers from 2 to the limit
